@@ -500,8 +500,6 @@ animations = [{
 scale = Vector2(1.77027, 1.77027)
 sprite_frames = SubResource("SpriteFrames_gmr5w")
 animation = &"Die"
-frame = 5
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
