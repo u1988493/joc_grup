@@ -22,12 +22,18 @@ scale = Vector2(2.73239, 1)
 texture = ExtResource("2_djnvg")
 
 [node name="03BackgroundA" type="Sprite2D" parent="Fons"]
-position = Vector2(596.5, 269)
+position = Vector2(620, -300)
 scale = Vector2(2.91315, 1)
 texture = ExtResource("3_e33q6")
 
 [node name="03BackgroundB" type="Sprite2D" parent="Fons"]
-position = Vector2(973, -269)
+position = Vector2(406, 289)
+scale = Vector2(1.95775, 1)
+texture = ExtResource("4_ld32h")
+
+[node name="03BackgroundB2" type="Sprite2D" parent="Fons"]
+position = Vector2(1240, 291)
+scale = Vector2(1.95775, 1)
 texture = ExtResource("4_ld32h")
 
 [node name="04Background" type="Sprite2D" parent="Fons"]
