@@ -1,5 +1,7 @@
 [gd_scene load_steps=76 format=3 uid="uid://cc48xkstx6lo0"]
 
+
+
 [ext_resource type="Script" path="res://Scripts/Personatge.gd" id="1_48cjj"]
 [ext_resource type="Texture2D" uid="uid://dh2bobfdg6dr6" path="res://Assets/Persoantge/Adventurer/adventurer-Sheet.png" id="1_r0a2c"]
 [ext_resource type="Texture2D" uid="uid://7ipadcd20ex5" path="res://Assets/Persoantge/Adventurer/Individual_Sprites/adventurer-idle-00.png" id="2_yv18n"]
@@ -484,6 +486,8 @@ size = Vector2(31, 46)
 size = Vector2(6, 41)
 
 [node name="persoantge" type="CharacterBody2D"]
+
+
 script = ExtResource("1_48cjj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
