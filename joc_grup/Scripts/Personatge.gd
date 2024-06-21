@@ -9,12 +9,22 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animated_sprite = $AnimatedSprite2D
 var dir = 0
-@export var attacking = false
+var attacking = false
+var defens = false
+var slides = false 
 
 func _process(delta):
-	#if Input.is_action_just_pressed("atacar"):
-		#attack()
-	pass
+	if !defens and !slides:
+		if Input.is_action_just_pressed("attack"):
+			attack()
+
+	if !attacking and !slides:
+		if Input.is_action_just_pressed("defense"):
+			defense()
+
+	if !attacking and !defens:
+		if Input.is_action_just_pressed("slide"):
+			slide()
 	
 func _physics_process(delta):
 	
@@ -38,12 +48,14 @@ func _physics_process(delta):
 		animated_sprite.flip_h = true
 	
 	# Play animation
-	if !attacking:
+	if !attacking and !defens and !slides:
 		if is_on_floor():
 			if direction == 0:
 				animated_sprite.play("Idel")
 			else:
 				animated_sprite.play("walk")
+				
+				
 		else:
 			animated_sprite.play("jump")
 	 
@@ -56,20 +68,42 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-#func attack():
-	#attacking = true
-	#animated_sprite.play("Attack")
-	#
-	#if animated_sprite.flip_h == false:
-		#$AttackArea/CollisionShape2D.disabled = false
-	#elif animated_sprite.flip_h == true:
-		#$AttackArea2/CollisionShape2D.disabled = false
+func attack():
+	attacking = true
+	animated_sprite.play("atacar")
+	
+	if animated_sprite.flip_h == false:
+		$AtackkArea/CollisionShape2D.disabled = false
+	elif animated_sprite.flip_h == true:
+		$AtackkArea2/CollisionShape2D2.disabled = false
 
+func defense():
+	defens = true
+	animated_sprite.play("defensar")
 	
+	if animated_sprite.flip_h == false:
+		$DefensArea/CollisionShape2D.disabled = false
+	elif animated_sprite.flip_h == true:
+		$DefensArea2/CollisionShape2D2.disabled = false
+
+
+func slide():
+	slides = true
+	animated_sprite.play("slide")
 	
-#func _on_animated_sprite_2d_animation_finished():
-	#if animated_sprite.animation == "Attack":
-	#	$AttackArea/CollisionShape2D.disabled = true
-	#	$AttackArea2/CollisionShape2D.disabled = true
-	#	attacking = false
+func _on_animated_sprite_2d_animation_finished():
+	if animated_sprite.animation == "atacar":
+		$AtackkArea/CollisionShape2D.disabled = true
+		$AtackkArea2/CollisionShape2D2.disabled = true
+		attacking = false
+		
+		
+	if animated_sprite.animation == "defensar":
+		$DefensArea/CollisionShape2D.disabled = true
+		$DefensArea2/CollisionShape2D2.disabled = true
+		defens = false
+
+	if animated_sprite.animation == "slide":
+		slides = false
+	
 	
