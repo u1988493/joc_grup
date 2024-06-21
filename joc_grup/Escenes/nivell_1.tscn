@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b3g4u1glv4d8x" path="res://Assets/Fons/Exterior/BG1.png" id="1_kcn4o"]
 [ext_resource type="Texture2D" uid="uid://b8aihfy6y188d" path="res://Assets/Fons/Exterior/BG2.png" id="2_tnptt"]
 [ext_resource type="Texture2D" uid="uid://b3gi25awnbgl3" path="res://Assets/Fons/Exterior/BG3.png" id="3_6r1e1"]
+
 [ext_resource type="PackedScene" uid="uid://dxt7dbbyq7mxh" path="res://Escenes/TileMapExterior.tscn" id="4_owrcm"]
 [ext_resource type="PackedScene" uid="uid://cc48xkstx6lo0" path="res://Escenes/Personatge.tscn" id="5_esu4y"]
 [ext_resource type="PackedScene" uid="uid://tnq4ax4ycfsh" path="res://kill_zone.tscn" id="6_ikoml"]
@@ -10,7 +11,11 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4vax3"]
 distance = -6.0
 
+
 [node name="Nivell1" type="Node2D"]
+
+[node name="TileMapExterior" parent="." instance=ExtResource("4_xbmbn")]
+z_index = 1
 
 [node name="Fons" type="Node" parent="."]
 
@@ -50,6 +55,7 @@ position = Vector2(1131.75, 358)
 scale = Vector2(1.33282, 1.51563)
 texture = ExtResource("3_6r1e1")
 
+
 [node name="TileMapExterior" parent="." instance=ExtResource("4_owrcm")]
 layer_0/name = "Layer 0"
 layer_0/z_index = 2
@@ -78,3 +84,4 @@ scale = Vector2(2.2, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("WorldBoundaryShape2D_4vax3")
+

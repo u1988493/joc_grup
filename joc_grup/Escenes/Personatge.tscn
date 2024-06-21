@@ -1,6 +1,8 @@
 [gd_scene load_steps=76 format=3 uid="uid://cc48xkstx6lo0"]
 
-[ext_resource type="Script" path="res://Escenes/Personatge.gd" id="1_hwkdm"]
+
+
+[ext_resource type="Script" path="res://Scripts/Personatge.gd" id="1_48cjj"]
 [ext_resource type="Texture2D" uid="uid://dh2bobfdg6dr6" path="res://Assets/Persoantge/Adventurer/adventurer-Sheet.png" id="1_r0a2c"]
 [ext_resource type="Texture2D" uid="uid://7ipadcd20ex5" path="res://Assets/Persoantge/Adventurer/Individual_Sprites/adventurer-idle-00.png" id="2_yv18n"]
 [ext_resource type="Texture2D" uid="uid://dpk47c78tma20" path="res://Assets/Persoantge/Adventurer/Individual_Sprites/adventurer-idle-01.png" id="3_fn7nx"]
@@ -53,13 +55,13 @@ region = Rect2(100, 0, 50, 37)
 atlas = ExtResource("1_r0a2c")
 region = Rect2(150, 0, 50, 37)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f7sql"]
-atlas = ExtResource("1_r0a2c")
-region = Rect2(0, 222, 50, 37)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_xbios"]
 atlas = ExtResource("1_r0a2c")
 region = Rect2(50, 222, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7sql"]
+atlas = ExtResource("1_r0a2c")
+region = Rect2(0, 222, 50, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4gmr"]
 atlas = ExtResource("1_r0a2c")
@@ -104,18 +106,6 @@ region = Rect2(150, 296, 50, 37)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ihnw3"]
 atlas = ExtResource("1_r0a2c")
 region = Rect2(200, 296, 50, 37)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jrnuw"]
-atlas = ExtResource("1_r0a2c")
-region = Rect2(250, 296, 50, 37)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5dx41"]
-atlas = ExtResource("1_r0a2c")
-region = Rect2(300, 296, 50, 37)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_osgp1"]
-atlas = ExtResource("1_r0a2c")
-region = Rect2(0, 333, 50, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_te0rr"]
 atlas = ExtResource("1_r0a2c")
@@ -301,10 +291,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f7sql")
+"texture": SubResource("AtlasTexture_xbios")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xbios")
+"texture": SubResource("AtlasTexture_f7sql")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e4gmr")
@@ -344,16 +334,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ihnw3")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jrnuw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5dx41")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_osgp1")
-}, {
-"duration": 1.0,
+"duration": 10.0,
 "texture": SubResource("AtlasTexture_te0rr")
 }],
 "loop": false,
@@ -495,15 +476,61 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ppyid"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qg0u"]
+radius = 11.0454
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1pik"]
+size = Vector2(31, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cujl"]
+size = Vector2(6, 41)
+
 [node name="persoantge" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
-script = ExtResource("1_hwkdm")
+
+
+script = ExtResource("1_48cjj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.77027, 1.77027)
 sprite_frames = SubResource("SpriteFrames_gmr5w")
 animation = &"Die"
+autoplay = "Idel"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 20)
 shape = SubResource("CircleShape2D_ppyid")
+
+[node name="AreaDamage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDamage"]
+shape = SubResource("CircleShape2D_4qg0u")
+
+[node name="AtackkArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AtackkArea"]
+position = Vector2(27.5, 3)
+shape = SubResource("RectangleShape2D_v1pik")
+disabled = true
+
+[node name="AtackkArea2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AtackkArea2"]
+position = Vector2(-32.5, 3)
+shape = SubResource("RectangleShape2D_v1pik")
+disabled = true
+
+[node name="DefensArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DefensArea"]
+position = Vector2(15, 7.5)
+shape = SubResource("RectangleShape2D_2cujl")
+disabled = true
+
+[node name="DefensArea2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DefensArea2"]
+position = Vector2(-14, 7.5)
+shape = SubResource("RectangleShape2D_2cujl")
+disabled = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
