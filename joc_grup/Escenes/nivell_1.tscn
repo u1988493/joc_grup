@@ -7,6 +7,9 @@
 
 [node name="Nivell1" type="Node2D"]
 
+[node name="TileMapExterior" parent="." instance=ExtResource("4_xbmbn")]
+z_index = 1
+
 [node name="Fons" type="Node" parent="."]
 
 [node name="Bg1" type="Sprite2D" parent="Fons"]
@@ -44,5 +47,3 @@ texture = ExtResource("3_6r1e1")
 position = Vector2(1148, 358)
 scale = Vector2(1.43438, 1.51563)
 texture = ExtResource("3_6r1e1")
-
-[node name="TileMapExterior" parent="." instance=ExtResource("4_xbmbn")]
