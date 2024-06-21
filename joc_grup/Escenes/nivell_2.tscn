@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1p4q7mqbllqb"]
+
+[ext_resource type="Texture2D" uid="uid://5mji87f4xc4c" path="res://Assets/Fons/Entrada/background1.png" id="1_4p3ve"]
+[ext_resource type="Texture2D" uid="uid://tejtpvv6wsed" path="res://Assets/Fons/Entrada/background2.png" id="2_u3sdu"]
+[ext_resource type="Texture2D" uid="uid://d15fswtcp1tlj" path="res://Assets/Fons/Entrada/background3.png" id="3_cqlj7"]
+[ext_resource type="Texture2D" uid="uid://1kh1yhj4cl15" path="res://Assets/Fons/Entrada/background4.png" id="4_n7m4s"]
+[ext_resource type="Texture2D" uid="uid://7ph5yxothw75" path="res://Assets/Fons/Entrada/background5.png" id="5_r3w76"]
+[ext_resource type="Texture2D" uid="uid://dae6xayjvi5fq" path="res://Assets/Fons/Entrada/background6.png" id="6_u1kyp"]
+[ext_resource type="PackedScene" uid="uid://bkbmiosf014p4" path="res://Escenes/TilemapEntrada.tscn" id="7_18q7s"]
+
+[node name="Nivell2" type="Node2D"]
+
+[node name="fons" type="Node" parent="."]
+
+[node name="Background1" type="Sprite2D" parent="fons"]
+position = Vector2(210, 328)
+scale = Vector2(1, 1.76042)
+texture = ExtResource("1_4p3ve")
+
+[node name="Background2" type="Sprite2D" parent="fons"]
+position = Vector2(636, 328)
+scale = Vector2(1, 1.76042)
+texture = ExtResource("1_4p3ve")
+
+[node name="Background3" type="Sprite2D" parent="fons"]
+position = Vector2(1062, 328)
+scale = Vector2(1, 1.76042)
+texture = ExtResource("1_4p3ve")
+
+[node name="Background4" type="Sprite2D" parent="fons"]
+position = Vector2(213, 326)
+texture = ExtResource("2_u3sdu")
+
+[node name="Background5" type="Sprite2D" parent="fons"]
+position = Vector2(639, 326)
+texture = ExtResource("2_u3sdu")
+
+[node name="Background6" type="Sprite2D" parent="fons"]
+position = Vector2(639, 326)
+texture = ExtResource("2_u3sdu")
+
+[node name="Background7" type="Sprite2D" parent="fons"]
+position = Vector2(1065, 326)
+texture = ExtResource("2_u3sdu")
+
+[node name="Background8" type="Sprite2D" parent="fons"]
+position = Vector2(1491, 326)
+texture = ExtResource("2_u3sdu")
+
+[node name="Background9" type="Sprite2D" parent="fons"]
+position = Vector2(219, 338)
+texture = ExtResource("3_cqlj7")
+
+[node name="Background10" type="Sprite2D" parent="fons"]
+position = Vector2(211, 356)
+texture = ExtResource("4_n7m4s")
+
+[node name="Background11" type="Sprite2D" parent="fons"]
+position = Vector2(226, 351)
+texture = ExtResource("5_r3w76")
+
+[node name="Background12" type="Sprite2D" parent="fons"]
+position = Vector2(210, 357)
+texture = ExtResource("6_u1kyp")
+
+[node name="Background13" type="Sprite2D" parent="fons"]
+position = Vector2(646, 337)
+texture = ExtResource("3_cqlj7")
+
+[node name="Background14" type="Sprite2D" parent="fons"]
+position = Vector2(638, 355)
+texture = ExtResource("4_n7m4s")
+
+[node name="Background15" type="Sprite2D" parent="fons"]
+position = Vector2(653, 350)
+texture = ExtResource("5_r3w76")
+
+[node name="Background16" type="Sprite2D" parent="fons"]
+position = Vector2(637, 356)
+texture = ExtResource("6_u1kyp")
+
+[node name="Background17" type="Sprite2D" parent="fons"]
+position = Vector2(1072, 337)
+texture = ExtResource("3_cqlj7")
+
+[node name="Background18" type="Sprite2D" parent="fons"]
+position = Vector2(1064, 355)
+texture = ExtResource("4_n7m4s")
+
+[node name="Background19" type="Sprite2D" parent="fons"]
+position = Vector2(1079, 350)
+texture = ExtResource("5_r3w76")
+
+[node name="Background20" type="Sprite2D" parent="fons"]
+position = Vector2(1063, 356)
+texture = ExtResource("6_u1kyp")
+
+[node name="TilemapEntrada" parent="." instance=ExtResource("7_18q7s")]

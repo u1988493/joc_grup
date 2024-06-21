@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://sowa01pgfu8v"]
+
+[ext_resource type="Texture2D" uid="uid://b3g4u1glv4d8x" path="res://Assets/Fons/Exterior/BG1.png" id="1_kcn4o"]
+[ext_resource type="Texture2D" uid="uid://b8aihfy6y188d" path="res://Assets/Fons/Exterior/BG2.png" id="2_tnptt"]
+[ext_resource type="Texture2D" uid="uid://b3gi25awnbgl3" path="res://Assets/Fons/Exterior/BG3.png" id="3_6r1e1"]
+
+[ext_resource type="PackedScene" uid="uid://dxt7dbbyq7mxh" path="res://Escenes/TileMapExterior.tscn" id="4_xbmbn"]
+
+[ext_resource type="PackedScene" uid="uid://dxt7dbbyq7mxh" path="res://Escenes/TileMapExterior.tscn" id="4_owrcm"]
+
+[node name="Nivell1" type="Node2D"]
+
+[node name="Fons" type="Node" parent="."]
+
+[node name="Bg1" type="Sprite2D" parent="Fons"]
+position = Vector2(578.5, 202)
+scale = Vector2(3.69062, 2.20833)
+texture = ExtResource("1_kcn4o")
+
+[node name="Bg7" type="Sprite2D" parent="Fons"]
+position = Vector2(581, 670)
+rotation = 3.14159
+scale = Vector2(3.69062, 3.40104)
+texture = ExtResource("1_kcn4o")
+
+[node name="Bg2" type="Sprite2D" parent="Fons"]
+position = Vector2(332, 291)
+scale = Vector2(2.10312, 1.99479)
+texture = ExtResource("2_tnptt")
+
+[node name="Bg3" type="Sprite2D" parent="Fons"]
+position = Vector2(1005, 293)
+scale = Vector2(2.10312, 1.99479)
+texture = ExtResource("2_tnptt")
+
+[node name="Bg4" type="Sprite2D" parent="Fons"]
+position = Vector2(230, 358)
+scale = Vector2(1.43438, 1.51563)
+texture = ExtResource("3_6r1e1")
+
+[node name="Bg5" type="Sprite2D" parent="Fons"]
+position = Vector2(689, 358)
+scale = Vector2(1.43438, 1.51563)
+texture = ExtResource("3_6r1e1")
+
+[node name="Bg6" type="Sprite2D" parent="Fons"]
+position = Vector2(1148, 358)
+scale = Vector2(1.43438, 1.51563)
+texture = ExtResource("3_6r1e1")
+
+
+[node name="TileMapExterior" parent="." instance=ExtResource("4_xbmbn")]
+
+[node name="TileMapExterior" parent="." instance=ExtResource("4_owrcm")]
+
